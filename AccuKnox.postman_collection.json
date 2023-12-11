@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "33606d89-3b35-4ff6-8688-dd6d509da115",
+		"name": "AccuKnox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10753305"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "meet@gmail.com,asddsa",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "meets",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dipen@2110",
+							"type": "text"
+						},
+						{
+							"key": "confirm_password",
+							"value": "Dipen@2110",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "Meet@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dipen@2110",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User search and filter",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMDQ0MjkwLCJpYXQiOjE3MDIwNDM5OTAsImp0aSI6IjJkOWE3MDM2OTUxOTRkNzdiYjk2Nzc0MmE4OTllNTMwIiwidXNlcl9pZCI6MTB9.2RuPqHHAoDPDMM9d0XemROWXpw89CD7MM2PBT2K0-tI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/users/?keyword=dipen@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "dipen@gmail.com"
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friend-requests send",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMjc5NTk4LCJpYXQiOjE3MDIyNzU5OTgsImp0aSI6Ijc1MGVmNzljNjZiNzQwYzk5OTliNGFiZDRhYzVlZDg3IiwidXNlcl9pZCI6MTB9.gcdrMxAHYLtzwEkygZUeYKiWMd-M9SfT1-v38Nkbqv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"to_user\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/friend-requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"friend-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friend-requests List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMjc5NTk4LCJpYXQiOjE3MDIyNzU5OTgsImp0aSI6Ijc1MGVmNzljNjZiNzQwYzk5OTliNGFiZDRhYzVlZDg3IiwidXNlcl9pZCI6MTB9.gcdrMxAHYLtzwEkygZUeYKiWMd-M9SfT1-v38Nkbqv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/friend-requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"friend-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept friend request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMjc5NTk4LCJpYXQiOjE3MDIyNzU5OTgsImp0aSI6Ijc1MGVmNzljNjZiNzQwYzk5OTliNGFiZDRhYzVlZDg3IiwidXNlcl9pZCI6MTB9.gcdrMxAHYLtzwEkygZUeYKiWMd-M9SfT1-v38Nkbqv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/friend-requests/5/accept_friend_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"friend-requests",
+						"5",
+						"accept_friend_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject friend request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMjc5NTk4LCJpYXQiOjE3MDIyNzU5OTgsImp0aSI6Ijc1MGVmNzljNjZiNzQwYzk5OTliNGFiZDRhYzVlZDg3IiwidXNlcl9pZCI6MTB9.gcdrMxAHYLtzwEkygZUeYKiWMd-M9SfT1-v38Nkbqv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/friend-requests/5/reject_friend_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"friend-requests",
+						"5",
+						"reject_friend_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Friends List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMjc5NTk4LCJpYXQiOjE3MDIyNzU5OTgsImp0aSI6Ijc1MGVmNzljNjZiNzQwYzk5OTliNGFiZDRhYzVlZDg3IiwidXNlcl9pZCI6MTB9.gcdrMxAHYLtzwEkygZUeYKiWMd-M9SfT1-v38Nkbqv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/friend-requests/friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"friend-requests",
+						"friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pending requests list",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyMjc5NTk4LCJpYXQiOjE3MDIyNzU5OTgsImp0aSI6Ijc1MGVmNzljNjZiNzQwYzk5OTliNGFiZDRhYzVlZDg3IiwidXNlcl9pZCI6MTB9.gcdrMxAHYLtzwEkygZUeYKiWMd-M9SfT1-v38Nkbqv0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/api/friend-requests/pending_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"api",
+						"friend-requests",
+						"pending_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
